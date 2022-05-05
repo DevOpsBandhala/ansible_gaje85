@@ -1,0 +1,8 @@
+---
+- name: ping them all
+  hosts: _target
+  vars:
+    ansible_ssh_private_key_file: "/root/terraform.pem"
+  tasks:
+    - name: pinging
+      ping:
