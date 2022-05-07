@@ -1,0 +1,5 @@
+---
+- name: ping them all
+  hosts: web
+  tasks:
+    - userdata: name=test age=24
