@@ -1,0 +1,15 @@
+- name: stop apache server
+  hosts: web
+  become: yes
+  tasks:
+    - name: stop server
+      service:
+        name: apache2
+        enabled: false
+        state: stopped
+
+    - name: uninstall Apache
+      apt:
+        name: apache2
+        autoremove: yes
+        state: absent
